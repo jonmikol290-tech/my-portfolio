@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jon Mikol | Portfolio</title>
+    <title>Jon Mikol | Data Science Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-        header { background: #222; color: #fff; padding: 20px 0; text-align: center; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f4f8fb; color: #222; }
+        header { background: linear-gradient(90deg, #222, #007acc); color: #fff; padding: 30px 0 10px 0; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
-        .hero { background: #007acc; color: #fff; padding: 60px 20px; text-align: center; }
-        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        h2 { color: #007acc; }
-        .skills-list { display: flex; flex-wrap: wrap; gap: 15px; }
-        .skills-list span { background: #e0e7ef; color: #222; padding: 8px 16px; border-radius: 20px; font-size: 1rem; }
-        footer { background: #222; color: #fff; text-align: center; padding: 15px 0; margin-top: 40px; }
+        nav ul li { margin: 0 18px; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: color 0.2s; }
+        nav ul li a:hover { color: #ffe082; }
+        .hero { background: linear-gradient(120deg, #007acc 60%, #00c6fb 100%); color: #fff; padding: 70px 20px 50px 20px; text-align: center; }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 0; }
+        .container { max-width: 950px; margin: 40px auto; background: #fff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.10); }
+        h2 { color: #007acc; margin-top: 0; }
+        .about-content { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .about-text { flex: 2; }
+        .about-photo { flex: 1; min-width: 120px; }
+        .about-photo img { width: 120px; border-radius: 50%; border: 3px solid #007acc; }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
+        .skills-list span { background: #e0e7ef; color: #222; padding: 10px 18px; border-radius: 20px; font-size: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .section { margin-bottom: 40px; }
+        .projects-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .project-card { background: #f7fafc; border-radius: 8px; padding: 18px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #007acc; }
+        .project-card h3 { margin-top: 0; color: #007acc; }
+        .project-card p { margin-bottom: 0; }
+        .contact-info { margin-top: 10px; }
+        .contact-info a { color: #007acc; text-decoration: none; margin-right: 18px; }
+        .contact-info a:hover { text-decoration: underline; }
+        footer { background: #222; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; font-size: 1rem; }
     </style>
 </head>
 <body>
@@ -26,19 +41,29 @@
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <section class="hero" id="hero">
-        <h2>Welcome to My Portfolio</h2>
+        <h2>Welcome to My Data Science Portfolio</h2>
         <p>Data Science Enthusiast | Problem Solver | Lifelong Learner</p>
     </section>
     <div class="container">
-        <section id="about">
+        <section id="about" class="section">
             <h2>About Me</h2>
-            <p>Hello! I'm Jon Mikol, passionate about data science and building solutions that make a difference. I enjoy working with data, uncovering insights, and creating impactful projects.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Jon Mikol, passionate about data science and building solutions that make a difference. I enjoy working with data, uncovering insights, and creating impactful projects. My interests include machine learning, data visualization, and automating workflows to solve real-world problems.</p>
+                    <p>With a background in statistics and programming, I am always eager to learn new technologies and collaborate on exciting projects. I believe in the power of data to drive better decisions and innovation.</p>
+                </div>
+                <div class="about-photo">
+                    <img src="https://avatars.githubusercontent.com/u/00000000?v=4" alt="Jon Mikol Photo" />
+                </div>
+            </div>
         </section>
-        <section id="skills">
+        <section id="skills" class="section">
             <h2>Skills</h2>
             <div class="skills-list">
                 <span>Python</span>
@@ -49,6 +74,35 @@
                 <span>SQL</span>
                 <span>Statistics</span>
                 <span>Jupyter</span>
+                <span>Scikit-learn</span>
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+                <span>Git</span>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-list">
+                <div class="project-card">
+                    <h3>Sales Forecasting Model</h3>
+                    <p>Developed a machine learning model to predict sales for a retail company, improving inventory planning and reducing stockouts by 15%.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Customer Segmentation Dashboard</h3>
+                    <p>Created an interactive dashboard using Python and Plotly to visualize customer segments and purchasing behavior for a marketing team.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Automated Data Cleaning Pipeline</h3>
+                    <p>Built a Python pipeline to automate data cleaning and preprocessing, saving hours of manual work for the analytics team.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:jonmikol290@gmail.com">jonmikol290@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">your-linkedin</a></p>
+                <p>GitHub: <a href="https://github.com/jonmikol290-tech" target="_blank">jonmikol290-tech</a></p>
             </div>
         </section>
     </div>
