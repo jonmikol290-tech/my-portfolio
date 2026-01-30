@@ -1,13 +1,59 @@
-<!-- Copied from templates/index.html for GitHub Pages deployment -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Jon Mikol | Portfolio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #222; color: #fff; padding: 20px 0; text-align: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+        .hero { background: #007acc; color: #fff; padding: 60px 20px; text-align: center; }
+        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        h2 { color: #007acc; }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 15px; }
+        .skills-list span { background: #e0e7ef; color: #222; padding: 8px 16px; border-radius: 20px; font-size: 1rem; }
+        footer { background: #222; color: #fff; text-align: center; padding: 15px 0; margin-top: 40px; }
+    </style>
 </head>
 <body>
-    <!-- Add your content here -->
+    <header>
+        <h1>Jon Mikol</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Data Science Enthusiast | Problem Solver | Lifelong Learner</p>
+    </section>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Jon Mikol, passionate about data science and building solutions that make a difference. I enjoy working with data, uncovering insights, and creating impactful projects.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Machine Learning</span>
+                <span>Data Visualization</span>
+                <span>SQL</span>
+                <span>Statistics</span>
+                <span>Jupyter</span>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2026 Jon Mikol. All rights reserved.
+    </footer>
 </body>
 </html>
