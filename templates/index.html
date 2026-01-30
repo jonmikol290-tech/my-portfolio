@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Buy List</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        #results > div { border:1px solid #ccc; margin:10px; padding:10px; }
+    </style>
+</head>
+<body>
+    <h1>Game Buy List</h1>
+    <form id="searchForm" onsubmit="return false;">
+        <input type="text" id="searchInput" placeholder="Search for your game..." style="width:300px;">
+    </form>
+    <div id="results"><p>Start typing to search for your game.</p></div>
+    <script>
+    function renderResults(list) {
+        let html = '';
+        if (!list || list.length === 0) { html = '<p>No results found.</p>'; }
+        else {
+            html = list.map((g, idx) => `
+                <div>
+                    <b>${g.title}</b> [${g.platform}]<br>
+                    Condition: 
+                    <button onclick='selectCondition(${idx},"Sealed")'>Sealed</button>
+                    <button onclick='selectCondition(${idx},"Complete")'>Complete</button>
+                    <button onclick='selectCondition(${idx},"Loose")'>Loose</button>
+                    <br><span id='pay_${idx}'>What We Pay: (select condition)</span>
+                    <button onclick='sellGame(${idx})'>Sell</button>
+                </div>
+            `).join('');
+        }
+        document.getElementById('results').innerHTML = html;
+    }
+    let searchResults = [];
+    function selectCondition(idx, cond) {
+        const g = searchResults[idx];
+        if (!g || !g.prices) return;
+        // Use 60% of PriceCharting value
+        const pay = (g.prices[cond] ? g.prices[cond]*0.6 : 0).toFixed(2);
+        document.getElementById('pay_'+idx).innerText = `What We Pay: $${pay} (${cond})`;
+    }
+    function sellGame(idx) {
+        const g = searchResults[idx];
+        window.location = `/sell?title=${encodeURIComponent(g.title)}&platform=${encodeURIComponent(g.platform)}`;
+    }
+    async function doSearch(q) {
+        if (!q) {
+            document.getElementById('results').innerHTML = '<p>Start typing to search for your game.</p>';
+            return;
+        }
+        const resp = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+        const data = await resp.json();
+        searchResults = data.results || [];
+        renderResults(searchResults);
+    }
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const q = this.value.trim();
+        if (q.length < 2) {
+            document.getElementById('results').innerHTML = '<p>Start typing to search for your game.</p>';
+            return;
+        }
+        doSearch(q);
+    });
+    </script>
+</body>
+</html>
